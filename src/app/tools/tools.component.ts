@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-tools',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ToolsComponent implements OnInit {
 
-  constructor() { }
+  tools$ = this.dataService.getTools();
+
+  constructor(private dataService: DataService) { }
 
   ngOnInit(): void {
   }
